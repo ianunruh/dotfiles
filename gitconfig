@@ -14,5 +14,6 @@
   cloneurl = config --get remote.origin.url
   master = checkout master
   pull = pull --ff-only
+
 [core]
-	editor = vim
+  editor = vim
