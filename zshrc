@@ -9,6 +9,7 @@ ZSH_THEME="ys"
 
 # Aliases
 alias atlas="ssh ianunruh@atlas.ianunruh.com -t screen -rd"
+alias cougar="ssh iunruh@cougar.cis.ksu.edu"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 
