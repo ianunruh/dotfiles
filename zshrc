@@ -20,7 +20,7 @@ alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable command autocorrection
-# DISABLE_CORRECTION="true"
+DISABLE_CORRECTION="true"
 
 # Uncomment following line if you want to disable marking untracked files under
 # VCS as dirty. This makes repository status check for large repositories much,
@@ -35,4 +35,4 @@ plugins=(git rails ruby)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:$PATH
+export PATH=$HOME/.rvm/bin:/usr/local/bin:$PATH
