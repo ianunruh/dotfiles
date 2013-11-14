@@ -35,7 +35,7 @@ set tabstop=2 shiftwidth=2 expandtab
 " User interface
 "
 set background=dark
-colorscheme solarized
+colorscheme base16-default
 set mouse=a
 set nowrap
 set number
