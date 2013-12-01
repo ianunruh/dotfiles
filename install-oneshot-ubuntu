@@ -1,16 +1,22 @@
 #!/bin/bash
 set -e -x
 
+sudo apt-get update
+sudo apt-get install -y vim zsh htop screen git
+
 pushd $HOME
 
-rm -f .vimrc .zshrc .gitconfig
+rm -f .vimrc .zshrc .gitconfig .gemrc
 
+ln -s dotfiles/gemrc .gemrc
 ln -s dotfiles/gitconfig .gitconfig
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/zshrc .zshrc
 
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+
+ln -s dotfiles/oh-my-zsh/themes/brian.zsh-theme ~/.oh-my-zsh/themes/brian.zsh-theme
 
 chsh -s /bin/zsh
 
