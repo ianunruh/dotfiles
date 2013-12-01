@@ -1,2 +1,3 @@
-set guifont=Mensch\ Regular:h13
-set transparency=5
+set guifont=Menlo\ for\ Powerline:h13
+
+colorscheme base16-monokai

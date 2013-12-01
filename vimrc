@@ -29,6 +29,8 @@ autocmd BufNewFile,BufRead Guardfile set ft=ruby
 autocmd BufNewFile,BufRead *.pp set ft=puppet
 autocmd BufNewFile,BufRead *.json set ft=javascript
 autocmd BufNewFile,BufRead *.{conf,cfg} set ft=dosini
+autocmd BufNewFile,BufRead Vagrantfile set ft=ruby
+autocmd BufNewFile,BufRead *.jbuilder set ft=ruby
 
 "
 " Tabs
