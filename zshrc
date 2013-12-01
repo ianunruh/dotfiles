@@ -5,13 +5,26 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="ys"
+ZSH_THEME="brian"
 
 # Aliases
 alias atlas="ssh ianunruh@atlas.ianunruh.com -t screen -rd"
 alias cougar="ssh iunruh@cougar.cis.ksu.edu"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
+
+# Vagrant aliases
+alias vs="vagrant ssh"
+alias vu="vagrant up --no-provision"
+alias vp="vagrant provision"
+# Depends on the vagrant-vbox-snapshot plugin
+alias vsb="vagrant snapshot back"
+alias vst="vagrant snapshot take"
+
+function vr() {
+  vagrant snapshot back $1
+  vagrant provision $1
+}
 
 # Uncomment this to disable bi-weekly auto-update checks
 # DISABLE_AUTO_UPDATE="true"
@@ -30,9 +43,13 @@ DISABLE_CORRECTION="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby)
+plugins=(git rails ruby vagrant)
 
+PATH=$HOME/.rvm/bin:/usr/local/bin:$PATH
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=$HOME/.rvm/bin:/usr/local/bin:$PATH
+export ANDROID_HOME=$HOME/android-sdk
+
+export EDITOR="vim"
+
