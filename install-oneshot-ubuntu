@@ -1,8 +1,10 @@
 #!/bin/bash
 set -e -x
 
-sudo apt-get update
-sudo apt-get install -y vim zsh htop screen git
+if [ ! -f /bin/zsh ]; then
+  sudo apt-get update
+  sudo apt-get install -y vim zsh htop screen git
+fi
 
 pushd $HOME
 
@@ -13,10 +15,17 @@ ln -s dotfiles/gitconfig .gitconfig
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/zshrc .zshrc
 
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+if [ ! -d ~/.vim/bundle/vundle ]; then
+  git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+fi
 
-ln -s dotfiles/oh-my-zsh/themes/brian.zsh-theme ~/.oh-my-zsh/themes/brian.zsh-theme
+if [ ! -d ~/.oh-my-zsh ]; then
+  git clone git://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+fi
+
+if [ ! -L ~/.oh-my-zsh/themes/brian.zsh-theme ]; then
+  ln -s dotfiles/oh-my-zsh/themes/brian.zsh-theme ~/.oh-my-zsh/themes/brian.zsh-theme
+fi
 
 chsh -s /bin/zsh
 
