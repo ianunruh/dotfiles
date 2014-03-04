@@ -1,20 +1,17 @@
-# Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="brian"
+ZSH_THEME="eastwood"
 
 # Aliases
-alias atlas="ssh ianunruh@atlas.ianunruh.com -t screen -rd"
-alias cougar="ssh iunruh@cougar.cis.ksu.edu"
+alias atlas="ssh atlas.ianunruh.com -t screen -rd"
+alias seahawk="ssh seahawk.ianunruh.com -t screen -rd"
+alias viper="ssh iunruh@viper.cis.ksu.edu"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc && source ~/.zshrc"
 
 # Vagrant aliases
 alias vs="vagrant ssh"
+alias vd="vagrant destroy"
 alias vu="vagrant up --no-provision"
 alias vp="vagrant provision"
 # Depends on the vagrant-vbox-snapshot plugin
@@ -26,30 +23,19 @@ function vr() {
   vagrant provision $1
 }
 
-# Uncomment this to disable bi-weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+# bit.ly/1kU0Ur8
+alias such="git"
+alias very="git"
+alias wow="git status"
 
-# Uncomment to change how often before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
-
-# Uncomment following line if you want to disable command autocorrection
 DISABLE_CORRECTION="true"
 
-# Uncomment following line if you want to disable marking untracked files under
-# VCS as dirty. This makes repository status check for large repositories much,
-# much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git rails ruby vagrant)
-
-PATH=$HOME/.rvm/bin:/usr/local/bin:$PATH
-source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export ANDROID_HOME=$HOME/android-sdk
+# zsh plugins
+plugins=(git rails ruby)
 
 export EDITOR="vim"
+export PATH=$HOME/bin:$HOME/.rvm/bin:/usr/local/bin:/usr/local/sbin:$PATH
+# Used for boot2docker
+export DOCKER_HOST=tcp://localhost:4243
 
+source $ZSH/oh-my-zsh.sh

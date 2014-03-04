@@ -2,7 +2,6 @@ set nocompatible
 set noswapfile
 
 filetype off
-filetype plugin indent on
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -10,27 +9,18 @@ call vundle#rc()
 "
 " Bundles
 "
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'chriskempson/base16-vim'
 Bundle 'gmarik/vundle'
-Bundle 'rodjek/vim-puppet'
-Bundle 'scrooloose/nerdtree'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tpope/vim-endwise'
 Bundle 'tpope/vim-sensible'
+Bundle 'tpope/vim-endwise'
+Bundle 'chriskempson/base16-vim'
+Bundle 'scrooloose/nerdtree'
+" Languages
+Bundle 'hail2u/vim-css3-syntax'
+Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'tpope/vim-markdown'
+Bundle 'rodjek/vim-puppet'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'vim-ruby/vim-ruby'
-
-"
-" File types
-"
-autocmd BufNewFile,BufRead *.{md,mkd,mkdn,kdown,mark*} set ft=markdown
-autocmd BufNewFile,BufRead Modulefile set ft=ruby
-autocmd BufNewFile,BufRead Guardfile set ft=ruby
-autocmd BufNewFile,BufRead *.pp set ft=puppet
-autocmd BufNewFile,BufRead *.json set ft=javascript
-autocmd BufNewFile,BufRead *.{conf,cfg} set ft=dosini
-autocmd BufNewFile,BufRead Vagrantfile set ft=ruby
-autocmd BufNewFile,BufRead *.jbuilder set ft=ruby
 
 "
 " Tabs
@@ -44,12 +34,11 @@ set tabstop=2 shiftwidth=2 expandtab
 set background=dark
 colorscheme base16-default
 set mouse=a
-set nowrap
 set number
+set nowrap
 
 autocmd vimenter * if !argc() | NERDTree | endif
 
-" Show tabs and trailing whitespace visually
 " Show tabs and trailing whitespace visually
 if (&termencoding == "utf-8") || has("gui_running")
   if v:version >= 700
@@ -73,4 +62,4 @@ set pastetoggle=<c-p>
 map <C-n> :NERDTreeToggle<CR>
 
 " Remove any trailing whitespace
-autocmd BufWritePre *.rb :%s/\s\+$//e
+autocmd BufWritePre *.{rb,md,markdown,html,css,scss,less} :%s/\s\+$//e
