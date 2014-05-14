@@ -25,6 +25,6 @@ fi
 
 chsh -s /bin/zsh
 
-vim -c "BundleInstall" -cq -cq -e
+vim +BundleInstall +qall
 
 popd
