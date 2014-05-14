@@ -1,7 +1,5 @@
-set guifont=Menlo\ for\ Powerline:h13
+set guifont=Oxygen\ Mono:h10
+"colorscheme base16-chalk
+colorscheme coalgraal
 
-colorscheme base16-tomorrow
-
-set wrap
-set linebreak
-set nolist
+autocmd BufNewFile,BufRead *.md setlocal wrap linebreak nolist
